@@ -1,0 +1,161 @@
+/* ------------------------------
+   Kit Sans Font-Family Declarations
+------------------------------ */
+
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kit Sans';
+  src: url('/src/assets/fonts/KitSans/KitSans-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ------------------------------
+   Semantic Font Ramp
+------------------------------ */
+
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@layer utilities {
+  .text-display {
+    @apply text-5xl font-black leading-none;
+  }
+
+  .text-h1 {
+    @apply text-4xl font-extrabold leading-tight;
+  }
+
+  .text-h2 {
+    @apply text-3xl font-bold leading-tight;
+  }
+
+  .text-h3 {
+    @apply text-2xl font-semibold leading-snug;
+  }
+
+  .text-h4 {
+    @apply text-xl font-medium leading-snug;
+  }
+
+  .text-body-lg {
+    @apply text-lg font-normal leading-relaxed;
+  }
+
+  .text-body {
+    @apply text-base font-normal leading-relaxed;
+  }
+
+  .text-body-sm {
+    @apply text-sm font-light leading-normal;
+  }
+
+  .text-caption {
+    @apply text-xs font-extralight leading-tight;
+  }
+}
