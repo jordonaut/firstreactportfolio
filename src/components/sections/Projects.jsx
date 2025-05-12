@@ -28,9 +28,6 @@ export const Projects = () => {
                              </span>
                         ))}
                     </div>
-                    <div className="flex justify-between items-center">
-                        <a href="#" className="mb-3 text-green-300 hover:text-teal-200 transition-colors my-4"> View Project </a>
-                    </div>
                 </div>
 
                 <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
@@ -44,9 +41,7 @@ export const Projects = () => {
                              </span>
                         ))}
                     </div>
-                    <div className="flex justify-between items-center">
-                        <a href="#" className="mb-3 text-green-300 hover:text-teal-200 transition-colors my-4"> View Project </a>
-                    </div>
+                    
                 </div>
 
             </div>
