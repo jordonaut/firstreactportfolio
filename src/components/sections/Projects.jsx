@@ -17,7 +17,7 @@ export const Projects = () => {
                     tags={["Design Systems", "Custom Icongraphy", "User Research", "Facilitation"]}
                     />
                     
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-green-700 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
                     <h3 className="text-xl font-semibold mb-2">Gay City Website Redesign</h3>
                     <p>As Communications Designer at Gay City I made brand-aligned visuals, campaign assets, and inclusive digital communications for Seattle’s LGBTQ+ community. My first order of business? Redesign their website.</p>
                     <div className="mb-2 p-2.5 flex items-start justify-items-center">
@@ -33,7 +33,7 @@ export const Projects = () => {
                     </div>
                 </div>
 
-                <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-green-700 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
+                <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
                     <h3 className="text-xl font-semibold mb-2">Velocity Dance Center</h3>
                     <p>My work with Story 2 allowed me to work on Velocity Dance Center's site, and do some really great research driven, results oriented, redesign work.</p>
                     <div className="mb-2 p-2.5 flex items-start justify-items-center">
