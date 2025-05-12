@@ -24,10 +24,10 @@ export const Home = () => {
             View Projects
           </a>
           <a
-            href="#contact"
+            href="#about"
             className="border border-green-300/50 text-green-300 py-3 px-6 rounded font-medium transition transform hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-green-300/20"
           >
-            Contact Me
+            About Me
           </a>
         </div>
       </div>
