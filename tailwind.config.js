@@ -4,7 +4,11 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'mint-glow': '0 0 12px rgba(165, 243, 206, 0.3)',
+      }
+    },
   },
   plugins: [],
 };

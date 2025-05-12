@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+:root {
+  --color-bg: #0C0F0D;
+  --color-surface: #0F1613;
+  --color-accent: #21F3A4;  
+  --color-primary: #A5F3CE;
+  --color-primary-bright: #55FFC1;
+  --color-mint-glow: #4BFFDC;
+  --color-ring-glow: rgba(165, 243, 206, 0.3);
+
+  --color-text: #E6FFF4;
+  --color-text-secondary: #89CBB3;
+
+  --color-purple-deep: #2D1E33;
+  --color-purple-glow: #D2B4FF;
+}
+
 html, body{
   margin: 0;
   padding: 0;
