@@ -40,7 +40,7 @@ export const Home = () => {
       </h1>
 
       <p className="text-[var(--color-text)] text-lg max-w-2xl">
-        I bring structure to the mess. From design systems to digital
+        Help People. Do good. Help people do good. <p></p>From design systems to digital
           strategy, I craft intuitive experiences that scale — grounded in
           research, driven by story, and built for real impact.
       </p>
