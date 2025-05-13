@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'; //please let this work (testing)
+import { useEffect, useState } from 'react';
 
 export const Home = () => {
   const [visitCount, setVisitCount] = useState(0);
