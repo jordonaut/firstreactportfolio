@@ -12,7 +12,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       >
         &times;
       </button>
-      {['Home', 'About', 'Projects', 'Contact'].map((label) => (
+      {['Home', 'About', 'Projects'].map((label) => (
         <a
           key={label}
           href={`#${label.toLowerCase()}`}
