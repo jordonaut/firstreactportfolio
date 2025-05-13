@@ -38,7 +38,7 @@ export const About = () => {
   }, []);
 
   const getCaption = () => {
-    if (visitCount > 1) return "Welcome back. Did you scroll all this way to see my face again?";
+    if (visitCount > 1) return "Welcome back. Did you scroll all this way to see my face?";
     return "Hi, I'm Jordan—nice to meet you.";
   };
 
