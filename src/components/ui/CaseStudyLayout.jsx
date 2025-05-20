@@ -1,4 +1,4 @@
-import { Navbar } from './Navbar';
+import { Navbar } from '../Navbar';
 import { motion } from 'framer-motion';
 
 export const CaseStudyLayout = ({ children }) => {
