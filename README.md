@@ -5,7 +5,7 @@
 
 ## About This Portfolio
 
-This portfolio is an ongoing project and creative sandbox. It brings together my work in UX design, product development, and front-end engineering. I started this as a challenge to myself when laid off from Boeing. It coalesed when I saw a job posting and they asked for a Senior Product Designer that could use Tailwind CSS. Over the last few months, I synthesized learning React, Tailwind, and other frameworks that I heard about. 
+This portfolio is an ongoing project and creative sandbox. It brings together my work in UX design, product development, and front-end engineering. I began this project as a challenge to myself after being laid off from Boeing. It coalesced when I saw a job posting and they asked for a Senior Product Designer that could use Tailwind CSS. Over the last few months, I synthesized learning React, Tailwind, and other frameworks that I heard about. 
 
 I'm proud that I built this from the ground up using React, Vite, and Tailwind CSS. It's where I explore code-driven storytelling, interaction design, and semantic design systems.
 
