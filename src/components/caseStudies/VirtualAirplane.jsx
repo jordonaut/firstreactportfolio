@@ -3,6 +3,8 @@ import '../../index.css';
 import { motion } from 'framer-motion';
 import { CaseStudyLayout } from '../ui/CaseStudyLayout';
 import { Section } from '../ui/Section';
+import vaIpadLandscape from '../../assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png';
+import { CaseStudyImage } from '../ui/CaseStudyImage';
 
 const transition = { duration: 0.6, ease: [0.4, 0, 0.2, 1] };
 
@@ -24,16 +26,21 @@ export default function VirtualAirplane() {
           >
             ← Back to Home
           </button> 
+            <h1 className="text-3xl font-bold">Virtual Airplane Learning System</h1>
+            <CaseStudyImage
+            src={vaIpadLandscape}
+            alt="Virtual Airplane displayed on iPad in landscape mode"
+            caption="Virtual Airplane was optimized for iPads, which are standard in Boeing cockpits. Designing for touch, readability, and layout across orientations was essential."
+            />
           <header className="space-y-2">
-            <h1 className="text-3xl font-bold">✈️ Virtual Airplane Learning System</h1>
             <p><strong>Role:</strong> UX/Product Designer</p>
             <p><strong>Client:</strong> The Boeing Company</p>
             <p><strong>Tools:</strong> Figma, HTML/CSS, Prototype Spec, Internal UX Testing</p>
           </header>
         </Section>
 
-        <Section id="discovery">
-          <h2 className="text-2xl font-semibold">🔍 Discovery</h2>
+        <Section id="background">
+          <h2 className="text-2xl font-semibold">Background</h2>
           <p>After the 737 MAX crashes, Boeing made pilot training a pillar of its safety commitments. Virtual Airplane was developed as a training tool to simulate cockpit procedures on iPads—standard issue in Boeing aircraft. The goal: help pilots build operational fluency before stepping into simulators.</p>
           <p>I led the redesign of the Lesson Panel—the main interface for navigating lessons. The original version functioned like a checklist, but pilots don’t think in checklists. They jump between systems, reference procedures, and need flexibility based on what they’re struggling with in the moment.</p>
           <p>We observed training sessions, interviewed student pilots, and worked closely with instructors. Most of the time, pilots trained by pointing at static cockpit posters and flipping through manuals like the FCOM. The lesson interface needed to reflect this real-world multitasking, not flatten it.</p>
