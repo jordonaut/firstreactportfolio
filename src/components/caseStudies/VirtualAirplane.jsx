@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { CaseStudyLayout } from '../ui/CaseStudyLayout';
 import { Section } from '../ui/Section';
 import vaIpadLandscape from '../../assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png';
+import chairFlyingExample from '../../assets/images/caseStudies/virtualAirplane/chair-flying-example.jpg';
+import chairFlyingVid from '../../assets/images/caseStudies/virtualAirplane/chair-flying-vid.jpg';
 import { CaseStudyImage } from '../ui/CaseStudyImage';
 
 const transition = { duration: 0.6, ease: [0.4, 0, 0.2, 1] };
@@ -39,12 +41,45 @@ export default function VirtualAirplane() {
           </header>
         </Section>
 
-        <Section id="background">
+       <Section id="background">
           <h2 className="text-2xl font-semibold">Background</h2>
-          <p>After the 737 MAX crashes, Boeing made pilot training a pillar of its safety commitments. Virtual Airplane was developed as a training tool to simulate cockpit procedures on iPads—standard issue in Boeing aircraft. The goal: help pilots build operational fluency before stepping into simulators.</p>
-          <p>I led the redesign of the Lesson Panel—the main interface for navigating lessons. The original version functioned like a checklist, but pilots don’t think in checklists. They jump between systems, reference procedures, and need flexibility based on what they’re struggling with in the moment.</p>
-          <p>We observed training sessions, interviewed student pilots, and worked closely with instructors. Most of the time, pilots trained by pointing at static cockpit posters and flipping through manuals like the FCOM. The lesson interface needed to reflect this real-world multitasking, not flatten it.</p>
+
+          <div className="md:flex md:items-start md:gap-6 my-8">
+            <div className="md:w-2/3 space-y-4">
+              <p>
+                After the 737 MAX crashes, Boeing made pilot training a pillar of its safety commitments. Virtual Airplane was developed as a training tool to simulate cockpit procedures on iPads—standard issue in Boeing aircraft. The goal: help pilots build operational fluency before stepping into simulators.
+              </p>
+              <p>
+                I led the redesign of the Lesson Panel—the main interface for navigating lessons. The original version functioned like a checklist, but pilots don’t think in checklists. They jump between systems, reference procedures, and need flexibility based on what they’re struggling with in the moment.
+              </p>
+            </div>
+            <div className="md:w-1/3 w-full shrink-0 mt-6 md:mt-0">
+              <CaseStudyImage
+                src={chairFlyingExample}
+                alt="Pilot using a cockpit poster during chair flying"
+                caption="Pilots often trained by pointing at printed cockpit posters to simulate task flow—known in aviation as 'chair flying.'"
+              />
+            </div>
+          </div>
+          <div className="md:flex md:items-start md:gap-6 my-8">
+            <div className="md:w-1/3 w-full shrink-0 flex items-center justify-start">
+              <CaseStudyImage
+                src={chairFlyingVid}
+                alt="Chair flying demonstration from training video"
+                caption="Training videos showed instructors encouraging non-linear exploration of systems and procedures."
+              />
+            </div>
+            <div className="md:w-2/3 space-y-4">
+              <p>
+                We observed training sessions, interviewed student pilots, and worked closely with instructors.
+                Most of the time, pilots trained by pointing at static cockpit posters and flipping through manuals like the FCOM.
+                The lesson interface needed to reflect this real-world multitasking, not flatten it.
+              </p>
+            </div>
+          </div>
         </Section>
+
+
 
         <Section id="features">
           <h2 className="text-2xl font-semibold">🛠 Key Features</h2>
