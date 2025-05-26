@@ -23,26 +23,46 @@ export default function VirtualAirplane() {
             className="text-[var(--color-accent)] underline mb-4"
           >
             ← Back to Home
-          </button>
+          </button> 
           <header className="space-y-2">
             <h1 className="text-3xl font-bold">✈️ Virtual Airplane Learning System</h1>
-            <p><strong>Role:</strong> UX/Product Designer, Design Systems Lead</p>
-            <p><strong>Client:</strong> The Boeing Company (Virtual Airplane Program)</p>
-            <p><strong>Tools:</strong> Figma, Storybook, Design Tokens</p>
+            <p><strong>Role:</strong> UX/Product Designer</p>
+            <p><strong>Client:</strong> The Boeing Company</p>
+            <p><strong>Tools:</strong> Figma, HTML/CSS, Prototype Spec, Internal UX Testing</p>
           </header>
         </Section>
 
         <Section id="discovery">
           <h2 className="text-2xl font-semibold">🔍 Discovery</h2>
-          <h3 className="text-xl font-semibold mt-4">Context</h3>
-          <p>The Virtual Airplane is used to prepare pilots for certification and in-aircraft training. It supports self-paced learning and instructor-led sessions. For the design to succeed, it had to reduce friction, support flexible teaching styles, and accommodate the procedural rigor of real-world cockpit workflows.</p>
+          <p>After the 737 MAX crashes, Boeing made pilot training a pillar of its safety commitments. Virtual Airplane was developed as a training tool to simulate cockpit procedures on iPads—standard issue in Boeing aircraft. The goal: help pilots build operational fluency before stepping into simulators.</p>
+          <p>I led the redesign of the Lesson Panel—the main interface for navigating lessons. The original version functioned like a checklist, but pilots don’t think in checklists. They jump between systems, reference procedures, and need flexibility based on what they’re struggling with in the moment.</p>
+          <p>We observed training sessions, interviewed student pilots, and worked closely with instructors. Most of the time, pilots trained by pointing at static cockpit posters and flipping through manuals like the FCOM. The lesson interface needed to reflect this real-world multitasking, not flatten it.</p>
+        </Section>
 
-          <h3 className="text-xl font-semibold mt-4">Assumptions</h3>
-          <p>The original design assumed pilots would follow a fixed lesson order. It also assumed the FCOM would be used separately—if at all—during training sessions. These assumptions didn’t reflect the reality: pilots needed the FCOM open constantly and navigated training materials based on what they were struggling with—not necessarily in the order we provided.</p>
+        <Section id="features">
+          <h2 className="text-2xl font-semibold">🛠 Key Features</h2>
 
-          <h3 className="text-xl font-semibold mt-4">Research</h3>
-          <p>I conducted interviews and collaborative working sessions with Boeing instructional designers, instructors, and commercial pilots. We observed how they used the Virtual Airplane during early training runs and noted the workarounds they developed—especially the constant toggling between the lesson content and the FCOM.</p>
-          <p>We also engaged with instructors to understand how they teach through the platform and what flexibility they needed to adjust lesson order or point trainees to specific content on the fly. Usage analytics confirmed frequent toggling between browser tabs, validating that the split workflows were not just anecdotal but systemic.</p>
+          <div className="space-y-6 mt-4">
+            <div>
+              <h3 className="text-xl font-semibold">All Lights On</h3>
+              <p>SMEs and customers said they couldn’t read the simulator. I proposed a feature to simulate cockpit floodlights. It required dev tradeoffs due to streaming constraints, but it was a small fix with big impact—instantly improving legibility.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold">Focus Button</h3>
+              <p>Users often got lost in the simulation’s 3D space. I introduced a refocus button to reorient them back to the original view. It meant creating global camera logic, but once released, it drastically improved navigation and task completion.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold">Active Pause</h3>
+              <p>Instructors needed a way to pause the sim without freezing every feature. I designed an Active Pause system that paused progression but still allowed exploration—paired with a discreet notification system in the Lesson Panel.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold">Lesson Panel Sizing</h3>
+              <p>The original panel was too small and inconsistent across teams. After testing, I standardized it to half-screen height and created documentation that multiple teams adopted. It reduced confusion and scrolling friction for trainees.</p>
+            </div>
+          </div>
         </Section>
 
         <Section id="tradeoffs">
@@ -50,44 +70,34 @@ export default function VirtualAirplane() {
 
           <div className="space-y-6 mt-4">
             <div>
-              <h3 className="text-xl font-semibold">Simulation Control vs. Focused Learning</h3>
-              <p>Tradeoff: Pin simulation controls and key user settings in a fixed top panel, but use icon-based labels, muted color schemes, and consistent placement to visually separate them from learning content.</p>
+              <h3 className="text-xl font-semibold">Realism vs. Clarity</h3>
+              <p>Some teams wanted the interface to look like a real cockpit. I advocated for aviation-aligned structure and vocabulary, not skeuomorphism—favoring focus over clutter.</p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold">FCOM Integration vs. Screen Real Estate</h3>
-              <p>Tradeoff: Implement a collapsible split-view with responsive resizing, allowing pilots to view both lesson content and the FCOM side-by-side with adjustable space allocation.</p>
+              <h3 className="text-xl font-semibold">FCOM Integration vs. Screen Space</h3>
+              <p>Pilots needed the FCOM constantly, but it's dense. We built a split-view with adjustable width so pilots could see it beside the Lesson Panel—without needing a second screen.</p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold">Modular Navigation vs. Sequential Learning</h3>
-              <p>Tradeoff: Group lessons by real-world systems while allowing instructors to sequence them for consistency when needed.</p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold">Fidelity to Aircraft Systems vs. Learnability</h3>
-              <p>Tradeoff: Use aviation-informed language and structure without leaning into skeuomorphism—favor clean, modern patterns for usability.</p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold">User Autonomy vs. Instructional Consistency</h3>
-              <p>Tradeoff: Implement role-based interfaces—self-guided learners have open access, while instructors can lock lesson progression during live sessions.</p>
+              <h3 className="text-xl font-semibold">Pilot Autonomy vs. Instructor Control</h3>
+              <p>We implemented role-aware views: pilots got open navigation, while instructors could lock pacing and drive the lesson forward in real-time.</p>
             </div>
           </div>
         </Section>
 
         <Section id="outcome">
           <h2 className="text-2xl font-semibold">✅ Outcome</h2>
-          <p>The redesigned Lesson Panel launched during my tenure and was met with overwhelmingly positive feedback from instructors, pilots, and designers. It resolved key friction points around navigation, multitasking, and instructional flexibility.</p>
+          <p>The Lesson Panel redesign launched in Release 5.2. Feedback from instructors and trainees was overwhelmingly positive. It became the foundation for multiple other interfaces across the Learner Solutions platform.</p>
 
           <ul className="list-disc ml-6 mt-4 space-y-2">
-            <li>Conducted follow-up research sessions to evaluate user engagement and effectiveness</li>
-            <li>Planned to expand FCOM functionality with bookmarks and annotations</li>
-            <li>Prepared to scale the redesigned panel across additional training environments</li>
-            <li>Set the foundation for iterative updates based on rollout feedback</li>
+            <li>Reduced user confusion through standardization and clear focus tools</li>
+            <li>Improved instructional flexibility via role-aware controls</li>
+            <li>Increased trainee engagement by integrating the FCOM contextually</li>
+            <li>Adopted as a model by other Boeing design teams</li>
           </ul>
 
-          <p className="mt-4">While I transitioned off the project shortly after launch, the work created a strategic foundation that aligned more closely with how pilots learn—and how instructors teach—in high-stakes environments.</p>
+          <p className="mt-4">Sometimes good design is invisible. Sometimes it’s a button that just says “Lights On.”</p>
         </Section>
       </CaseStudyLayout>
     </motion.div>
