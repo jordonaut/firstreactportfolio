@@ -6,6 +6,8 @@ import { Section } from '../ui/Section';
 import vaIpadLandscape from '../../assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png';
 import chairFlyingExample from '../../assets/images/caseStudies/virtualAirplane/chair-flying-example.jpg';
 import chairFlyingVid from '../../assets/images/caseStudies/virtualAirplane/chair-flying-vid.jpg';
+import interfaceDesignOne from '../../assets/images/caseStudies/virtualAirplane/interface-design-one.png';
+import inferfaceDesignTwo from '../../assets/images/caseStudies/virtualAirplane/interface-design-two.png'
 import { CaseStudyImage } from '../ui/CaseStudyImage';
 
 const transition = { duration: 0.6, ease: [0.4, 0, 0.2, 1] };
@@ -79,10 +81,44 @@ export default function VirtualAirplane() {
           </div>
         </Section>
 
+        <Section id="designing-the-lesson-panel">
+          <h2 className="text-2xl font-semibold">Designing the Lesson Overlay</h2>
+
+          <div className="my-6">
+            <CaseStudyImage
+              src={interfaceDesignOne}
+              alt="Initial interface design of the Lesson Overlay"
+              caption="An early mockup of the redesigned Lesson Panel interface layered over the 3D Virtual Airplane simulation."
+            />
+          </div>
+
+          <p className="mt-6">
+            The Lesson Overlay wasn’t just another interface—it was the <strong>core entry point</strong> to the entire Virtual Airplane experience. Sitting on top of a real-time 3D flight simulation, the Lesson Panel guided pilots through training modules, procedural walkthroughs, and instructor-led lessons. The initial designs mirrored standard app functionality. 
+          </p>
+
+          <p className="mt-4">
+            Because the platform was designed to run on iPads—standard equipment in Boeing cockpits—the entire experience was <strong>streamed remotely using a custom web-based rendering stack</strong>. This allowed Virtual Airplane to deliver cockpit simulation and training content without requiring expensive local hardware or thick-client installations.
+          </p>
+
+          <p className="mt-4">
+            Getting the Lesson Panel right meant creating a layer that felt as immediate, grounded, and predictable as the flight deck itself. Any friction in this interface risked disrupting the mental flow of the lesson. We designed it to feel quiet, stable, and precise—so that pilots could focus on their training, not on the tool delivering it.
+          </p>
+
+         <div className="my-6">
+            <CaseStudyImage
+              src={inferfaceDesignTwo}
+              alt="Second Iteration design of the Lesson Overlay"
+              caption="Iterating on the Lesson Panel Design. This version was released with version 2.0 of the Virtual Airplane Experience."
+            />
+          </div>
+          <p className="mt-4">
+            After working with the developers, it was pointed out that because this is a <strong>streaming experience</strong> users would need to have the ability to toggle out of an immersive mode, into a theatre mode (similar to YouTube.) Future mockups of the overlay added a theatre mode button, next to the close button, for users to preserve real estate.
+          </p>
+        </Section>
 
 
         <Section id="features">
-          <h2 className="text-2xl font-semibold">🛠 Key Features</h2>
+          <h2 className="text-2xl font-semibold">Key Features</h2>
 
           <div className="space-y-6 mt-4">
             <div>
