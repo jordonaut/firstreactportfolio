@@ -21,7 +21,7 @@ export function Sidebar() {
         if (visible) setActiveId(visible.target.id);
       },
       {
-        rootMargin: '-40% 0px -50% 0px',
+        rootMargin: '-20% 0px -40% 0px',
         threshold: 0.1,
       }
     );

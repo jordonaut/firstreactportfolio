@@ -5,7 +5,7 @@ import { CaseStudyLayout } from '../ui/CaseStudyLayout';
 import { Section } from '../ui/Section';
 import vaIpadLandscape from '../../assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png';
 import chairFlyingExample from '../../assets/images/caseStudies/virtualAirplane/chair-flying-example.jpg';
-import chairFlyingVid from '../../assets/images/caseStudies/virtualAirplane/chair-flying-vid.jpg';
+import chairFlyingVid from '../../assets/images/caseStudies/virtualAirplane/chair-flying-vid.jpeg';
 import interfaceDesignOne from '../../assets/images/caseStudies/virtualAirplane/interface-design-one.png';
 import inferfaceDesignTwo from '../../assets/images/caseStudies/virtualAirplane/interface-design-two.png'
 import { CaseStudyImage } from '../ui/CaseStudyImage';
@@ -36,42 +36,54 @@ export default function VirtualAirplane() {
           </header>
         </Section>
 
-       <Section id="background" data-label="Background">
+        <Section id="background" data-label="Background">
           <h2 className="text-2xl font-semibold">Background</h2>
+            <div className="md:flex md:items-center md:gap-6 my-12">
+              <div className="md:w-2/3 space-y-4">
+                <p>
+                  After the 737 MAX crashes, Boeing made pilot training a pillar of its safety commitments.
+                  Virtual Airplane was developed as a training tool to simulate cockpit procedures on iPads—standard issue in Boeing aircraft.
+                  The goal: help pilots build operational fluency before stepping into simulators.
+                </p>
+                <p>
+                  I led the redesign of the Lesson Panel—the main interface for navigating lessons.
+                  The original version functioned like a checklist, but pilots don’t think in checklists.
+                  They jump between systems, reference procedures, and need flexibility based on what they’re struggling with in the moment.
+                </p>
+              </div>
+              <div className="md:w-1/3 w-full mt-8 md:mt-0 flex justify-center">
+                <div className="flex flex-col items-center text-center">
+                  <CaseStudyImage
+                    src={chairFlyingExample}
+                    alt="Pilot using a cockpit poster during chair flying"
+                    caption="Pilots often trained by pointing at printed cockpit posters to simulate task flow—known in aviation as 'chair flying.'"
+                  />
+                </div>
+              </div>
+            </div>
 
-          <div className="md:flex md:items-start md:gap-6 my-8">
-            <div className="md:w-2/3 space-y-4">
-              <p>
-                After the 737 MAX crashes, Boeing made pilot training a pillar of its safety commitments. Virtual Airplane was developed as a training tool to simulate cockpit procedures on iPads—standard issue in Boeing aircraft. The goal: help pilots build operational fluency before stepping into simulators.
-              </p>
-              <p>
-                I led the redesign of the Lesson Panel—the main interface for navigating lessons. The original version functioned like a checklist, but pilots don’t think in checklists. They jump between systems, reference procedures, and need flexibility based on what they’re struggling with in the moment.
-              </p>
-            </div>
-            <div className="md:w-1/3 w-full shrink-0 mt-6 md:mt-0">
-              <CaseStudyImage
-                src={chairFlyingExample}
-                alt="Pilot using a cockpit poster during chair flying"
-                caption="Pilots often trained by pointing at printed cockpit posters to simulate task flow—known in aviation as 'chair flying.'"
-              />
-            </div>
+            <div className="md:flex md:items-center md:gap-6 my-12">
+              <div className="md:w-1/3 w-full mt-8 md:mt-0 flex justify-center">
+                <div className="flex flex-col items-center text-center">
+                  <CaseStudyImage
+                    src={chairFlyingVid}
+                    alt="Chair flying demonstration from training video"
+                    caption="Outside of the classroom, simple set ups can become quite elaborate (and humorous) based on the pilot's training needs."
+                  />
+                </div>
+              </div>
+              <div className="md:w-2/3 space-y-4">
+                <p>
+                  We observed training sessions, interviewed student pilots, and worked closely with instructors.
+                  Most of the time, pilots trained by pointing at static cockpit posters and flipping through manuals like the FCOM.
+                  The lesson interface needed to reflect this real-world multitasking, not flatten it.
+                </p>
+              </div>
           </div>
-          <div className="md:flex md:items-start md:gap-6 my-8">
-            <div className="md:w-1/3 w-full shrink-0 flex items-center justify-start">
-              <CaseStudyImage
-                src={chairFlyingVid}
-                alt="Chair flying demonstration from training video"
-                caption="Training videos showed instructors encouraging non-linear exploration of systems and procedures."
-              />
-            </div>
-            <div className="md:w-2/3 space-y-4">
-              <p>
-                We observed training sessions, interviewed student pilots, and worked closely with instructors.
-                Most of the time, pilots trained by pointing at static cockpit posters and flipping through manuals like the FCOM.
-                The lesson interface needed to reflect this real-world multitasking, not flatten it.
-              </p>
-            </div>
-          </div>
+         <p className="text-xl md:text-2xl leading-relaxed text-[var(--color-text)] max-w-4xl mx-auto my-16">
+                Virtual Airplane was more than a simulator, it was how pilots bridged theory and cockpit reality—something they could return to again and again. 
+                It offered a steady space to practice, reflect, and prepare—to build trust in their instincts.
+          </p>
         </Section>
 
         <Section id="designing-the-lesson-panel" data-label="Designing the Lesson Panel">
