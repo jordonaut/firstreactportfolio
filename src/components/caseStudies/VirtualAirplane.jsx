@@ -23,13 +23,7 @@ export default function VirtualAirplane() {
       transition={transition}
     >
       <CaseStudyLayout>
-        <Section id="hero">
-          <button
-            onClick={() => navigate('/')}
-            className="text-[var(--color-accent)] underline mb-4"
-          >
-            ← Back to Home
-          </button> 
+        <Section id="hero" data-label="Overview">
             <h1 className="text-3xl font-bold">Virtual Airplane Learning System</h1>
             <CaseStudyImage
             src={vaIpadLandscape}
@@ -38,12 +32,11 @@ export default function VirtualAirplane() {
             />
           <header className="space-y-2">
             <p><strong>Role:</strong> UX/Product Designer</p>
-            <p><strong>Client:</strong> The Boeing Company</p>
             <p><strong>Tools:</strong> Figma, HTML/CSS, Prototype Spec, Internal UX Testing</p>
           </header>
         </Section>
 
-       <Section id="background">
+       <Section id="background" data-label="Background">
           <h2 className="text-2xl font-semibold">Background</h2>
 
           <div className="md:flex md:items-start md:gap-6 my-8">
@@ -81,7 +74,7 @@ export default function VirtualAirplane() {
           </div>
         </Section>
 
-        <Section id="designing-the-lesson-panel">
+        <Section id="designing-the-lesson-panel" data-label="Designing the Lesson Panel">
           <h2 className="text-2xl font-semibold">Designing the Lesson Overlay</h2>
 
           <div className="my-6">
@@ -117,7 +110,7 @@ export default function VirtualAirplane() {
         </Section>
 
 
-        <Section id="features">
+        <Section id="features" data-label="Features">
           <h2 className="text-2xl font-semibold">Key Features</h2>
 
           <div className="space-y-6 mt-4">
@@ -143,8 +136,8 @@ export default function VirtualAirplane() {
           </div>
         </Section>
 
-        <Section id="tradeoffs">
-          <h2 className="text-2xl font-semibold">🧩 Design Tradeoffs</h2>
+        <Section id="tradeoffs" data-label="Tradeoffs">
+          <h2 className="text-2xl font-semibold">Design Tradeoffs</h2>
 
           <div className="space-y-6 mt-4">
             <div>
@@ -164,8 +157,8 @@ export default function VirtualAirplane() {
           </div>
         </Section>
 
-        <Section id="outcome">
-          <h2 className="text-2xl font-semibold">✅ Outcome</h2>
+        <Section id="outcome" data-label="Outcomes">
+          <h2 className="text-2xl font-semibold">Outcome</h2>
           <p>The Lesson Panel redesign launched in Release 5.2. Feedback from instructors and trainees was overwhelmingly positive. It became the foundation for multiple other interfaces across the Learner Solutions platform.</p>
 
           <ul className="list-disc ml-6 mt-4 space-y-2">
