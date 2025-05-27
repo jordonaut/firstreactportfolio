@@ -7,8 +7,11 @@ import vaIpadLandscape from '../../assets/images/caseStudies/virtualAirplane/va-
 import chairFlyingExample from '../../assets/images/caseStudies/virtualAirplane/chair-flying-example.jpg';
 import chairFlyingVid from '../../assets/images/caseStudies/virtualAirplane/chair-flying-vid.jpeg';
 import interfaceDesignOne from '../../assets/images/caseStudies/virtualAirplane/interface-design-one.png';
-import inferfaceDesignTwo from '../../assets/images/caseStudies/virtualAirplane/interface-design-two.png'
+import inferfaceDesignTwo from '../../assets/images/caseStudies/virtualAirplane/interface-design-two.png';
+import lessonOverlayFeatures from '../../assets/images/caseStudies/virtualAirplane/lesson-overlay-features.png';
+import lessonPanelDocumentation from '../../assets/images/caseStudies/virtualAirplane/lesson-panel-documentation.png'
 import { CaseStudyImage } from '../ui/CaseStudyImage';
+import { FullBleed } from '../ui/FullBleed';
 
 const transition = { duration: 0.6, ease: [0.4, 0, 0.2, 1] };
 
@@ -121,8 +124,16 @@ export default function VirtualAirplane() {
           </p>
         </Section>
 
+        <FullBleed
+      imageA={lessonOverlayFeatures}
+      altA="A sandbox view of the Lesson Overlay features"
+      captionA="As the Lesson Panel evolved, I helped prototype and refine a growing set of overlay features. This sandbox view captured the complexity as needs expanded and the stack matured."
+      imageB={lessonPanelDocumentation}
+      altB="Documented view of the Lesson Panel system"
+      captionB="To keep design and engineering aligned, I created a single source of truth—documenting each feature’s purpose, behavior, and technical implications for collaborative implementation."
+      />
 
-        <Section id="features" data-label="Features">
+      <Section id="features" data-label="Features">
           <h2 className="text-2xl font-semibold">Key Features</h2>
 
           <div className="space-y-6 mt-4">
