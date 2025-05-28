@@ -7,9 +7,10 @@ export function FullBleed({
   captionB = '',
 }) {
   return (
-    <figure className="w-full my-24">
-      <div className="relative w-full overflow-hidden">
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-12">
+    <figure className="my-24">
+      {/* Bleed Container */}
+      <div className="relative w-[100vw] left-[50%] -translate-x-1/2 overflow-hidden">
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
           <img
             src={imageA}
             alt={altA}
@@ -24,8 +25,8 @@ export function FullBleed({
       </div>
 
       {imageB && (
-        <div className="relative w-full overflow-hidden mt-16">
-          <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-12">
+        <div className="relative w-[100vw] left-[50%] -translate-x-1/2 overflow-hidden mt-16">
+          <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
             <img
               src={imageB}
               alt={altB}

@@ -14,21 +14,21 @@ export const CaseStudyLayout = ({ children }) => {
       {/* Top Navbar */}
       <Navbar />
 
-      {/* Page Layout */}
-      <div className="flex-1 flex flex-col md:flex-row">
-        {/* Floating Sidebar */}
-        <div className="hidden md:block w-60">
+      {/* 12-column Grid Layout */}
+      <div className="grid grid-cols-12 w-full px-4 md:px-8 gap-x-6">
+        {/* Sidebar: spans 2 columns on md+ */}
+        <aside className="hidden md:block col-span-2 pt-12">
           <Sidebar />
-        </div>
+        </aside>
 
-        {/* Main Content */}
-        <main className="flex-1 py-12 space-y-20 relative">
-          {/* Mobile Nav */}
-          <div className="md:hidden mb-8 px-4 sm:px-8">
+        {/* Main Content: spans 12 on mobile, 8 centered on md+ */}
+        <main className="col-span-12 md:col-span-8 md:col-start-4 pt-12 space-y-20 relative">
+          {/* Mobile Nav: only visible on small screens */}
+          <div className="md:hidden mb-8">
             <MobileSectionNav />
           </div>
 
-          {/* Dynamically wrap Sections only */}
+          {/* Section Wrapping */}
           {Array.isArray(children)
             ? children.map((child, index) => {
                 const name = child?.type?.name;
