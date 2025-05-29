@@ -8,7 +8,7 @@ import { Section } from '../ui/Section';
 import { HeroSection } from '../ui/HeroSection';
 import { CaseStudyImage } from '../ui/CaseStudyImage';
 import { FullBleed } from '../ui/FullBleed';
-import { FeatureQuote } from '../ui/Featurequote';
+import { FeatureQuote } from '../ui/FeatureQuote';
 
 // Assets
 import vaIpadLandscape from '../../assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png';
