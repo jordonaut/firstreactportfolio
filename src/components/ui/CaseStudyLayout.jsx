@@ -2,8 +2,20 @@ import { Navbar } from '../Navbar';
 import { Sidebar } from './Sidebar';
 import { MobileSectionNav } from './MobileSectionNav';
 import { motion } from 'framer-motion';
+import { Children, isValidElement } from 'react';
 
 export const CaseStudyLayout = ({ children }) => {
+  const normalizedChildren = Children.toArray(children).filter(isValidElement);
+
+  const getComponentName = (child) => {
+    return (
+      child?.type?.displayName ||
+      child?.type?.name ||
+      child?.props?.mdxType ||
+      'Unknown'
+    );
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -11,39 +23,45 @@ export const CaseStudyLayout = ({ children }) => {
       transition={{ duration: 0.6 }}
       className="min-h-screen flex flex-col bg-[var(--color-bg)] text-[var(--color-text)]"
     >
-      {/* Top Navbar */}
+      {/* Navbar */}
       <Navbar />
 
-      {/* 12-column Grid Layout */}
+      {/* Grid Layout */}
       <div className="grid grid-cols-12 w-full px-4 md:px-8 gap-x-6">
-        {/* Sidebar: spans 2 columns on md+ */}
+        {/* Sidebar */}
         <aside className="hidden md:block col-span-2 pt-12">
           <Sidebar />
         </aside>
 
-        {/* Main Content: spans 12 on mobile, 8 centered on md+ */}
-        <main className="col-span-12 md:col-span-8 md:col-start-4 pt-12 space-y-20 relative">
-          {/* Mobile Nav: only visible on small screens */}
-          <div className="md:hidden mb-8">
-            <MobileSectionNav />
-          </div>
+        {/* Mobile Nav */}
+        <div className="col-span-12 md:hidden mb-8 pt-12">
+          <MobileSectionNav />
+        </div>
 
-          {/* Section Wrapping */}
-          {Array.isArray(children)
-            ? children.map((child, index) => {
-                const name = child?.type?.name;
-                const isSection = name === 'Section';
-                return (
-                  <div
-                    key={index}
-                    className={isSection ? 'max-w-5xl mx-auto px-4 sm:px-8' : ''}
-                  >
-                    {child}
-                  </div>
-                );
-              })
-            : children}
-        </main>
+        {/* Page Content */}
+        {normalizedChildren.map((child, index) => {
+          const name = getComponentName(child);
+          const isSection = name === 'Section';
+          const isFullBleed = name === 'FullBleed';
+
+          if (name === 'Unknown') {
+            console.warn('CaseStudyLayout: Unrecognized child component', child);
+          }
+
+          let wrapperClass = 'col-span-12';
+
+          if (isSection) {
+            wrapperClass += ' md:col-span-8 md:col-start-4 max-w-5xl w-full px-4 sm:px-8 py-12 space-y-20';
+          } else if (isFullBleed) {
+            wrapperClass += ' w-full py-12';
+          }
+
+          return (
+            <div key={index} className={wrapperClass}>
+              {child}
+            </div>
+          );
+        })}
       </div>
     </motion.div>
   );

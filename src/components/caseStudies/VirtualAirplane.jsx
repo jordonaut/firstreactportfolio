@@ -8,6 +8,7 @@ import { Section } from '../ui/Section';
 import { HeroSection } from '../ui/HeroSection';
 import { CaseStudyImage } from '../ui/CaseStudyImage';
 import { FullBleed } from '../ui/FullBleed';
+import { FeatureQuote } from '../ui/Featurequote';
 
 // Assets
 import vaIpadLandscape from '../../assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png';
@@ -56,9 +57,8 @@ export default function VirtualAirplane() {
                 The goal: help pilots build operational fluency before stepping into simulators.
               </p>
               <p>
-                I led the redesign of the Lesson Panel—the main interface for navigating lessons.
-                The original version functioned like a checklist, but pilots don’t think in checklists.
-                They jump between systems, reference procedures, and need flexibility based on what they’re struggling with in the moment.
+                To keep us all safe, pilots have an incredible amount of information to memorize.
+                Each aircraft model has its own series of procedures that pilots need to know almost instinctually, in order to ensure the safety of the crew and its cargo. Virtual Airplane was meant to help pilots build that muscle memory and get their reps in outside of the classroom.
               </p>
             </div>
             <div className="md:w-1/3 w-full mt-8 md:mt-0 flex justify-center">
@@ -80,19 +80,19 @@ export default function VirtualAirplane() {
             </div>
             <div className="md:w-2/3 space-y-4">
               <p>
-                We observed training sessions, interviewed student pilots, and worked closely with instructors.
-                Most of the time, pilots trained by pointing at static cockpit posters and flipping through manuals like the FCOM.
+                In order to craft an accurate, reliable, trustworthy training tool, the team observed classroom sessions, interviewed student pilots, and worked closely with in-house instructors.
+                Most of the time, pilots trained by pointing at static cockpit posters and flipping through manuals like the FCOM. The question became how do we allow the pilots to access all they needed to train?
+              </p>
+              <p>
                 The lesson interface needed to reflect this real-world multitasking, not flatten it.
               </p>
             </div>
           </div>
-
-          <p className="text-xl md:text-2xl leading-relaxed text-[var(--color-text)] max-w-4xl mx-auto my-16">
-            Virtual Airplane was more than a simulator, it was how pilots bridged theory and cockpit reality—something they could return to again and again. 
-            It offered a steady space to practice, reflect, and prepare—to build trust in their instincts.
-          </p>
         </Section>
-
+        <FeatureQuote>
+        Virtual Airplane was more than a simulator, it was how pilots bridged theory and cockpit reality. <br />
+          It offered a steady space to practice, reflect, and prepare—to build trust in their instincts.
+        </FeatureQuote>
         <Section id="designing-the-lesson-panel" data-label="Designing the Lesson Panel">
           <h2 className="text-2xl font-semibold">Designing the Lesson Overlay</h2>
 
@@ -132,13 +132,15 @@ export default function VirtualAirplane() {
         </Section>
 
         <FullBleed
-          imageA={lessonOverlayFeatures}
-          altA="A sandbox view of the Lesson Overlay features"
-          captionA="As the Lesson Panel evolved, I helped prototype and refine a growing set of overlay features. This sandbox view captured the complexity as needs expanded and the stack matured."
-          imageB={lessonPanelDocumentation}
-          altB="Documented view of the Lesson Panel system"
-          captionB="To keep design and engineering aligned, I created a single source of truth—documenting each feature’s purpose, behavior, and technical implications for collaborative implementation."
-        />
+            imageA={lessonOverlayFeatures}
+            altA="A sandbox view of the Lesson Overlay features"
+            captionA="As the Lesson Panel evolved, I helped prototype and refine a growing set of overlay features. This sandbox view captured the complexity as needs expanded and the stack matured."
+
+            imageB={lessonPanelDocumentation}
+            altB="Documented view of the Lesson Panel system"
+            captionB="To keep design and engineering aligned, I created a single source of truth—documenting each feature’s purpose, behavior, and technical implications for collaborative implementation."
+          />
+
 
         <Section id="features" data-label="Features">
           <h2 className="text-2xl font-semibold">Key Features</h2>
