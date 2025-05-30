@@ -29,9 +29,9 @@ export const CaseStudyLayout = ({ children }) => {
       {/* Grid Layout */}
       <div className="grid grid-cols-12 w-full px-4 md:px-8 gap-x-6">
         {/* Sidebar */}
-        <aside className="hidden md:block col-span-2 pt-12">
+        <div className="hidden md:block col-span-2 pt-12">
           <Sidebar />
-        </aside>
+        </div>
 
         {/* Mobile Nav */}
         <div className="col-span-12 md:hidden mb-8 pt-12">
