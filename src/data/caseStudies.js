@@ -3,7 +3,7 @@ export const caseStudies = [
     slug: 'virtual-airplane',
     title: 'Virtual Airplane',
     subtitle: 'Redesigning the Lesson Panel to Reflect How Pilots Actually Learn',
-    tags: ['UX Design', 'Pilot Training', 'React', 'Boeing'],
+    tags: ['UX Design', 'Figma', 'Aerospace', 'Boeing', 'User Research'],
     featuredImage: '/src/assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png',
     component: 'VirtualAirplane',
   },
