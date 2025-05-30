@@ -89,9 +89,8 @@ export default function VirtualAirplane() {
             </div>
           </div>
         </Section>
-        <FeatureQuote>
-        Virtual Airplane was more than a simulator, it was how pilots bridged theory and cockpit reality. <br />
-          It offered a steady space to practice, reflect, and prepare—to build trust in their instincts.
+        <FeatureQuote subline="We were making a tool to help them build muscle memory and procedural fluency before ever stepping into the simulator.">
+        Virtual Airplane was more than a simulator, it was how pilots bridged theory and cockpit reality.
         </FeatureQuote>
         <Section id="designing-the-lesson-panel" data-label="Designing the Lesson Panel">
           <h2 className="text-2xl font-semibold">Designing the Lesson Overlay</h2>
