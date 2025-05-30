@@ -51,7 +51,7 @@ export const CaseStudyLayout = ({ children }) => {
           let wrapperClass = 'col-span-12';
 
           if (isSection) {
-            wrapperClass += ' md:col-span-8 md:col-start-4 max-w-5xl w-full px-4 sm:px-8 py-12 space-y-20';
+            wrapperClass += ' md:col-span-7 md:col-start-3 max-w-5xl w-full px-4 sm:px-8 py-12 space-y-20';
           } else if (isFullBleed) {
             wrapperClass += ' w-full py-12';
           }
