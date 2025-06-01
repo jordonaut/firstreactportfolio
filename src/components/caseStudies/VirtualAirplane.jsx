@@ -18,6 +18,10 @@ import interfaceDesignOne from '../../assets/images/caseStudies/virtualAirplane/
 import inferfaceDesignTwo from '../../assets/images/caseStudies/virtualAirplane/interface-design-two.png';
 import lessonOverlayFeatures from '../../assets/images/caseStudies/virtualAirplane/lesson-overlay-features.png';
 import lessonPanelDocumentation from '../../assets/images/caseStudies/virtualAirplane/lesson-panel-documentation.png';
+import lightsOn from '../../assets/images/caseStudies/virtualAirplane/lights-on.png';
+import lightsOff from '../../assets/images/caseStudies/virtualAirplane/lights-off.png';
+import activePause from '../../assets/images/caseStudies/virtualAirplane/active-pause.png';
+
 
 // Data
 import { caseStudies } from '../../data/caseStudies';
@@ -62,10 +66,11 @@ export default function VirtualAirplane() {
               </p>
             </div>
             <div className="md:w-1/3 w-full mt-8 md:mt-0 flex justify-center">
+              
               <CaseStudyImage
-                src={chairFlyingExample}
-                alt="Pilot using a cockpit poster during chair flying"
-                caption="Pilots often trained by pointing at printed cockpit posters to simulate task flow—known in aviation as 'chair flying.'"
+                images={[
+                  { src: chairFlyingExample, alt: "Pilot using a cockpit poster during chair flying", caption: "Pilots often trained by pointing at printed cockpit posters to simulate task flow—known in aviation as 'chair flying." }
+                ]}
               />
             </div>
           </div>
@@ -73,9 +78,9 @@ export default function VirtualAirplane() {
           <div className="md:flex md:items-center md:gap-6 my-12">
             <div className="md:w-1/3 w-full mt-8 md:mt-0 flex justify-center">
               <CaseStudyImage
-                src={chairFlyingVid}
-                alt="Chair flying demonstration from training video"
-                caption="Outside of the classroom, simple set ups can become quite elaborate (and humorous) based on the pilot's training needs."
+                images={[
+                  { src: chairFlyingVid, alt: "Chair flying demonstration from training video", caption: "Outside of the classroom, simple set ups can become quite elaborate (and humorous) based on the pilot's training needs." },
+                ]}
               />
             </div>
             <div className="md:w-2/3 space-y-4">
@@ -145,6 +150,12 @@ export default function VirtualAirplane() {
           <h2 className="text-2xl font-semibold">Key Features</h2>
 
           <div className="space-y-6 mt-4">
+             <CaseStudyImage
+                images={[
+                  { src: lightsOff, alt: "Lights off in the cockpit simulator", caption: "The simulator was difficult to read in low light. I proposed a feature to simulate cockpit floodlights, which instantly improved legibility." },
+                  { src: lightsOn, alt: "Lights on in the cockpit simulator", caption: "The simulator was difficult to read in low light. I proposed a feature to simulate cockpit floodlights, which instantly improved legibility."}
+                ]}
+              />
             <Feature title="All Lights On">
               SMEs and customers said they couldn’t read the simulator. I proposed a feature to simulate cockpit floodlights. It required dev tradeoffs due to streaming constraints, but it was a small fix with big impact—instantly improving legibility.
             </Feature>
