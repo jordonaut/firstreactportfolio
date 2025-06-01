@@ -13,14 +13,15 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore');
-    if (hasLoadedBefore) {
+    const loadCount = parseInt(localStorage.getItem('loadCount') || '0', 10);
+    if (loadCount >= 3) {
       setIsLoaded(true);
     }
   }, []);
 
   const handleLoadingComplete = () => {
-    sessionStorage.setItem('hasLoadedBefore', 'true');
+    const loadCount = parseInt(localStorage.getItem('loadCount') || '0', 10) + 1;
+    localStorage.setItem('loadCount', loadCount.toString());
     setIsLoaded(true);
   };
 

@@ -19,12 +19,11 @@ export function FullBleed({ imageA, altA, captionA, imageB, altB, captionB }) {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     }
-
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isZoomed, handleKeyDown]);
 
   const ImageBlock = ({ src, alt, caption }) => (
-    <div className="my-24">
+    <div className="my-12">
       <img
         src={src}
         alt={alt}
@@ -43,10 +42,13 @@ export function FullBleed({ imageA, altA, captionA, imageB, altB, captionB }) {
   );
 
   return (
-    <figure className="w-screen max-w-none relative left-1/2 -translate-x-1/2 px-0">
+    <figure className="col-span-8 col-start-3 w-screen max-w-none relative left-1/2 -translate-x-1/2 px-0">
       <div className="w-full px-4 sm:px-8 max-w-screen-2xl mx-auto">
         <ImageBlock src={imageA} alt={altA} caption={captionA} />
         {imageB && <ImageBlock src={imageB} alt={altB} caption={captionB} />}
+        <p className="text-center text-xs text-[var(--color-text-secondary)] mt-2 mb-8">
+          Click an image to zoom. Once zoomed, scroll or drag to pan. Press <kbd>Esc</kbd> to exit.
+        </p>
       </div>
 
       <AnimatePresence>
@@ -59,20 +61,31 @@ export function FullBleed({ imageA, altA, captionA, imageB, altB, captionB }) {
             onClick={() => setIsZoomed(false)}
           >
             <motion.div
-              initial={{ scale: 0.95 }}
+              initial={{ scale: 0.98 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
+              exit={{ scale: 0.98 }}
               transition={{ duration: 0.3 }}
-              className="relative max-w-full max-h-full overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
+              className="relative flex items-center justify-center w-full h-full"
+              onClick={e => e.stopPropagation()}
+              style={{ overflow: 'auto' }}
             >
               <img
                 src={activeImage?.src}
                 alt={activeImage?.alt}
-                className="w-auto h-auto max-h-[90vh] max-w-[95vw] object-contain"
+                className="block object-contain"
+                style={{
+                  maxWidth: '100vw',
+                  maxHeight: '80vh',
+                  width: 'auto',
+                  height: 'auto',
+                  margin: 'auto',
+                  display: 'block',
+                  background: 'black'
+                }}
+                draggable="true"
               />
               <p className="absolute bottom-4 left-4 right-4 text-sm text-center text-white bg-black/70 px-6 py-2 rounded-md max-w-3xl mx-auto">
-                {activeImage?.caption} — Use scroll to pan. Press <kbd>Esc</kbd> to exit.
+                {activeImage?.caption} — Scroll or drag to pan. Press <kbd>Esc</kbd> to exit.
               </p>
             </motion.div>
           </motion.div>
