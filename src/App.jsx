@@ -11,17 +11,20 @@ import { About } from './components/sections/About';
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loadCount, setLoadCount] = useState(0);
 
   useEffect(() => {
-    const loadCount = parseInt(localStorage.getItem('loadCount') || '0', 10);
-    if (loadCount >= 3) {
+    const count = parseInt(localStorage.getItem('loadCount') || '0', 10);
+    setLoadCount(count);
+    if (count >= 3) {
       setIsLoaded(true);
     }
   }, []);
 
   const handleLoadingComplete = () => {
-    const loadCount = parseInt(localStorage.getItem('loadCount') || '0', 10) + 1;
-    localStorage.setItem('loadCount', loadCount.toString());
+    const count = parseInt(localStorage.getItem('loadCount') || '0', 10) + 1;
+    localStorage.setItem('loadCount', count.toString());
+    setLoadCount(count);
     setIsLoaded(true);
   };
 
@@ -36,8 +39,20 @@ function App() {
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Home />
-        <Projects />
+
+        {/* Dynamically render sections based on load count, if visiting for the first time show the home and projects, but after that show projects first */}
+        {loadCount === 0 ? (
+          <>
+            <Home />
+            <Projects />
+          </>
+        ) : (
+          <>
+            <Projects />
+            <Home />
+          </>
+        )}
+
         <About />
       </div>
     </>
