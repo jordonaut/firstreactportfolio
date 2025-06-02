@@ -1,25 +1,60 @@
-import { Link } from 'react-router-dom';
+// ProjectCard.jsx
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { TagList } from '../../components/TagList';
 
-export const ProjectCard = ({ title, description, to, tags = [] }) => {
+export const ProjectCard = ({
+  slug,
+  title,
+  subtitle,
+  heroImage,
+  alt,
+  caption,
+  role,
+  tools,
+  tags = [],
+}) => {
+  const navigate = useNavigate();
+
   return (
-    <Link
-      to={to}
+    <motion.article
+      layoutId={`card-${slug}`}
+      onClick={() => navigate(`/projects/${slug}`)}
       aria-label={`View ${title} case study`}
-      className="block p-6 rounded-xl border border-white/10 bg-[var(--color-surface)] text-[var(--color-text)] transition-all duration-300 transform hover:scale-[1.01] hover:border-green-700 hover:shadow-[0_0_16px_var(--color-mint-glow)] cursor-pointer"
+      className="block cursor-pointer rounded-xl border border-white/20 bg-[var(--color-surface)] text-[var(--color-text)] overflow-hidden shadow-md transition-all duration-300 transform hover:scale-[1.01] hover:border-white/50 hover:shadow-[0_0_16px_var(--color-mint-glow)]"
     >
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p>{description}</p>
+      {heroImage && (
+        <motion.img
+          layoutId={`image-${slug}`}
+          src={heroImage}
+          alt={alt || `${title} thumbnail`}
+          className="w-full h-56 object-cover"
+        />
+      )}
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        {tags.map((tag, i) => (
-          <span
-            key={i}
-            className="bg-green-700/10 text-teal-200 py-1 px-3 rounded-full text-sm hover:bg-[var(--color-ring-glow)] transition"
+      <div className="p-6">
+        <motion.h3
+          layoutId={`title-${slug}`}
+          className="text-xl font-semibold mb-2"
+        >
+          {title}
+        </motion.h3>
+
+        {subtitle && (
+          <motion.p
+            layoutId={`subtitle-${slug}`}
+            className="text-[var(--color-text)] mb-4"
           >
-            {tag}
-          </span>
-        ))}
+            {subtitle}
+          </motion.p>
+        )}
+
+        {tags.length > 0 && (
+          <div className="mt-2">
+            <TagList tags={tags} />
+          </div>
+        )}
       </div>
-    </Link>
+    </motion.article>
   );
 };

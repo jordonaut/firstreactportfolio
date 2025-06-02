@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion';
 import { TagList } from '../../components/TagList';
 
 export const HeroSection = ({
+  slug,
   title,
   subtitle,
   image,
@@ -11,13 +13,17 @@ export const HeroSection = ({
   tags = [],
 }) => {
   return (
-    <section className="w-full py-24 px-4 sm:px-6 bg-[var(--color-bg)] text-[var(--color-text)]">
-      <div className="grid grid-cols-12 gap-4 max-w-screen-xl mx-auto">
-        <div className="col-span-12 lg:col-start-3 lg:col-span-9 text-center space-y-8">
+    <section className="w-full py-24 px-0 sm:px-0 text-[var(--color-text)]">
+      <div className="max-w-screen-xl mx-auto space-y-8 px-4">
+        {/* Title & Subtitle */}
+        <div className="text-center space-y-8">
           {title && (
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+            <motion.h1
+              layoutId={`title-${slug}`}
+              className="text-5xl md:text-6xl font-bold leading-tight tracking-tight"
+            >
               {title}
-            </h1>
+            </motion.h1>
           )}
 
           {tags.length > 0 && (
@@ -27,19 +33,23 @@ export const HeroSection = ({
           )}
 
           {subtitle && (
-            <p className="text-xl md:text-2xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+            <motion.p
+              layoutId={`subtitle-${slug}`}
+              className="text-xl md:text-2xl text-[var(--color-text-secondary)] max-w-3xl mx-auto"
+            >
               {subtitle}
-            </p>
+            </motion.p>
           )}
         </div>
 
+        {/* Hero Image */}
         {image && (
-        <div className="col-span-12 grid grid-cols-12 mt-12">
-          <div className="col-start-3 col-span-9 mx-auto">
-            <img
+          <div className="w-full px-0">
+            <motion.img
+              layoutId={`image-${slug}`}
               src={image}
               alt={alt}
-              className="w-full h-auto rounded-2xl shadow-lg"
+              className="w-full h-auto rounded-xl shadow-lg"
             />
             {caption && (
               <p className="text-sm mt-3 text-[var(--color-text-secondary)] text-center">
@@ -47,14 +57,15 @@ export const HeroSection = ({
               </p>
             )}
           </div>
-        </div>
-      )}
+        )}
 
-
-        <div className="col-span-12 lg:col-start-3 lg:col-span-9 text-center mt-12 space-y-2 text-[var(--color-text)]">
-          {role && <p><strong>Role:</strong> {role}</p>}
-          {tools && <p><strong>Tools:</strong> {tools}</p>}
-        </div>
+        {/* Role and Tools */}
+        {(role || tools) && (
+          <div className="text-center space-y-2 max-w-xl mx-auto">
+            {role && <p><strong>Role:</strong> {role}</p>}
+            {tools && <p><strong>Tools:</strong> {tools}</p>}
+          </div>
+        )}
       </div>
     </section>
   );

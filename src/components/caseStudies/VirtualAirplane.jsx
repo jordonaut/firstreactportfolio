@@ -11,7 +11,7 @@ import { FullBleed } from '../ui/FullBleed';
 import { FeatureQuote } from '../ui/FeatureQuote';
 
 // Assets
-import vaIpadLandscape from '../../assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png';
+import vaHero from '../../assets/images/caseStudies/virtualAirplane/va-ipad-landscape.png';
 import chairFlyingExample from '../../assets/images/caseStudies/virtualAirplane/chair-flying-example.jpg';
 import chairFlyingVid from '../../assets/images/caseStudies/virtualAirplane/chair-flying-vid.jpeg';
 import interfaceDesignOne from '../../assets/images/caseStudies/virtualAirplane/interface-design-one.png';
@@ -27,7 +27,18 @@ import activePause from '../../assets/images/caseStudies/virtualAirplane/active-
 import { caseStudies } from '../../data/caseStudies';
 
 const transition = { duration: 0.6, ease: [0.4, 0, 0.2, 1] };
-const thisCase = caseStudies.find(cs => cs.slug === 'virtual-airplane');
+const thisCase = {
+  slug: 'virtual-airplane',
+  title: 'Designing Virtual Airplane',
+  subtitle: 'Redesigning the Lesson Panel to Reflect How Pilots Actually Learn',
+  heroImage: vaHero,
+  alt: 'Hero image for Virtual Airplane',
+  caption: 'A screenshot from the training interface',
+  role: 'Lead UX Designer',
+  tools: 'Figma, React, Framer Motion',
+  tags: ['UX Design', 'Figma', 'Aerospace', 'Boeing', 'User Research'],
+};
+
 
 export default function VirtualAirplane() {
   const navigate = useNavigate();
@@ -40,15 +51,18 @@ export default function VirtualAirplane() {
       transition={transition}
     >
       <CaseStudyLayout>
-        <HeroSection
-          title="Designing Virtual Airplane"
-          image={vaIpadLandscape}
-          alt="Virtual Airplane displayed on iPad in landscape mode"
-          caption="Virtual Airplane was optimized for streaming through the web on iPads. iPads are standard in Boeing cockpits. Designing for touch, readability, and layout across orientations was essential."
-          role="UX/Product Designer"
-          tools="Figma, HTML/CSS, Prototype Spec, Internal UX Testing"
-          tags={thisCase?.tags || []}
-        />
+        <motion.div layoutId={`card-${thisCase.slug}`}>
+          <HeroSection
+            title={thisCase.title}
+            subtitle={thisCase.subtitle}
+            image={thisCase.heroImage}
+            alt={thisCase.alt}
+            caption={thisCase.caption}
+            role={thisCase.role}
+            tools={thisCase.tools}
+            tags={thisCase.tags}
+          />
+        </motion.div>
 
         <Section id="background" data-label="Background">
           <h2 className="text-2xl font-semibold">Background</h2>
@@ -215,3 +229,17 @@ function Feature({ title, children }) {
     </div>
   );
 }
+
+export const virtualAirplaneMeta = {
+  slug: 'virtual-airplane',
+  title: 'Virtual Airplane',
+  subtitle: 'Redesigning the Lesson Panel to Reflect How Pilots Actually Learn',
+  heroImage: vaHero,
+  alt: 'Hero image for Virtual Airplane',
+  caption: 'A screenshot from the training interface',
+  role: 'Lead UX Designer',
+  tools: 'Figma, React, Framer Motion',
+  tags: ['UX Design', 'Figma', 'Aerospace', 'Boeing', 'User Research'],
+  component: VirtualAirplane,
+  featured: true,
+};
