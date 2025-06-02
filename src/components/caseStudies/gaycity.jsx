@@ -9,9 +9,15 @@ import { Section } from '../ui/Section';
 import { HeroSection } from '../ui/HeroSection';
 import { CaseStudyImage } from '../ui/CaseStudyImage';
 import { FeatureQuote } from '../ui/FeatureQuote';
+import { FullBleed } from '../ui/FullBleed';
 
 // Assets (placeholder - swap with actual imports when images available)
 import gayCityHero from '../../assets/images/caseStudies/gayCity/gay-city-hero.png';
+import q1 from '../../assets/images/caseStudies/gayCity/survey-data-q1.png';
+import q3 from '../../assets/images/caseStudies/gayCity/survey-data-q3.png';
+import notes from '../../assets/images/caseStudies/gayCity/facilitation-notes.jpg';
+import iaSketch from '../../assets/images/caseStudies/gayCity/ia-sketch.jpg';
+import sitemap from '../../assets/images/caseStudies/gayCity/sitemap.png';
 
 const thisCase = {
   slug: 'gay-city',
@@ -56,7 +62,7 @@ export default function GayCity() {
         </motion.div>
 
         <Section id="background" data-label="Background">
-          <h2 className="text-2xl font-semibold">Not the Job I Was Hired For</h2>
+          <h2 className="text-2xl font-semibold">Welcome to Non-Profits</h2>
           <p>
             I joined Gay City as a Communications Designer—hired to make flyers, event banners, and newsletters.
             But the biggest communication barrier was the one no one wanted to talk about: the website.
@@ -67,6 +73,13 @@ export default function GayCity() {
             No one knew how to fix it, and everyone was too tired to try. So I asked if I could.
           </p>
         </Section>
+
+           <CaseStudyImage
+                images={[
+                    { src: q1, alt: "Data that was collected to understand the website", caption: "When I took on this task, I used the opportunity to actually hear from users not just about the website, but how they came to find Gay City in the first place." },
+                    { src: q3, alt: "Data that was collected to understand the website", caption: "The data was clear: most people used the site for HIV/STI testing, and many were first-time visitors looking for queer resources." }
+                    ]}
+                        />
 
         <Section id="research" data-label="Research">
           <h2 className="text-2xl font-semibold">Listening First</h2>
@@ -85,20 +98,54 @@ export default function GayCity() {
         </Section>
 
         <Section id="design" data-label="Design">
-          <h2 className="text-2xl font-semibold">From IA Workshop to Wireframes</h2>
-          <p>
-            I gathered stakeholders across programs and facilitated a live information architecture workshop.
-            Each department had competing needs, but shared pain.
-          </p>
-          <p className="mt-4">
-            With Sketch, I built mobile-first wireframes that:
-          </p>
-          <ul className="list-disc ml-6 mt-2 space-y-2">
-            <li>Highlighted testing hours and scheduler links</li>
-            <li>Created space for youth programming and art events</li>
-            <li>Unified brand tone across a cleaner layout</li>
-          </ul>
-        </Section>
+            <h2 className="text-2xl font-semibold">From Friction to Flow</h2>
+
+            <p>
+                The biggest challenge wasn’t the tech stack—it was the disconnect between departments.
+                Gay City’s teams had grown fragmented over time. Youth services, testing, arts programming, operations, and comms each had their own goals, their own audiences, and their own frustrations with how the website failed them.
+            </p>
+            <CaseStudyImage
+                images={[
+                    { src: notes, alt: "Data that was collected to understand the website", caption: "When I took on this task, I used the opportunity to actually hear from users not just about the website, but how they came to find Gay City in the first place." },
+                    { src: iaSketch, alt: "Data that was collected to understand the website", caption: "The data was clear: most people used the site for HIV/STI testing, and many were first-time visitors looking for queer resources." }
+                    ]}
+                        />
+            <p className="mt-4">
+                I didn’t start with wireframes. I started with relationships.
+                Over the course of several weeks, I met one-on-one with each department lead to understand their needs, their blockers, and how they wanted their work to be seen online.
+                I listened for what they were trying to protect, what they felt invisible inside of, and where the old site had left them feeling abandoned.
+            </p>
+
+            <p className="mt-4">
+                After building that foundation, I facilitated a full information architecture workshop—bringing everyone into the same room for the first time.
+                It wasn’t always smooth. There were moments of tension, competing priorities, and longstanding frustrations.
+                But having already earned some trust, I was able to hold space for the mess—and guide us toward shared clarity.
+            </p>
+
+            <p className="mt-4">
+                From that process, I created mobile-first wireframes in Sketch that:
+            </p>
+
+            <ul className="list-disc ml-6 mt-2 space-y-2">
+                <li>Centered testing access and health resources as the most-used feature</li>
+                <li>Elevated youth and arts programming with dedicated, easy-to-update sections</li>
+                <li>Established a unified brand tone that honored departmental voice without creating chaos</li>
+            </ul>
+
+            <CaseStudyImage
+                                images={[
+                  {
+                    src: sitemap,
+                    alt: "Sitemap of the proposed redesign, showing a clear hierarchy and flow of content",
+                    caption: "The sitemap I created helped visualize the new structure, ensuring each department’s needs were met while keeping the user journey clear."
+                  }
+                ]}
+                />
+            </Section>
+
+        <FeatureQuote subline="A signal that even in burnout and breakdown, alignment is still possible when care is part of the process."> 
+                The site became more than a tool—it became a point of reconnection.
+                A shared artifact we built together. </FeatureQuote>
 
         <Section id="development" data-label="Development">
           <h2 className="text-2xl font-semibold">No Dev? No Problem.</h2>
@@ -128,17 +175,37 @@ export default function GayCity() {
           you build the thing anyway.
         </FeatureQuote>
 
-        <Section id="reflection" data-label="Reflection">
-          <h2 className="text-2xl font-semibold">The Real Work</h2>
-          <p>
-            Years later, the site’s still online. The bones—the IA, the styles, the structure—are mine.
-            I wasn’t hired to do this. I didn’t even know if I should.
-            But I did it because queer infrastructure matters.
-          </p>
-          <p className="mt-4">
-            You make it work. You make it gentle. You make it home.
-          </p>
+        <Section id="reflection" data-label="The Real Work">
+        <h2 className="text-2xl font-semibold">The Real Work</h2>
+
+        <p>
+            This project changed how I think about design. It reminded me that craft isn’t always clean or quiet.
+            Sometimes it means stepping in with steadiness when systems break—holding tension, rebuilding trust, and refusing to look away.
+        </p>
+
+        <p className="mt-4">
+            I wasn’t hired to rebuild Gay City’s website. I wasn’t expected to carry the code, the architecture, or the emotional weight behind it.
+            But when the developer disappeared and the org had no one else left to turn to, I chose to stay.
+            Because that’s what the work required.
+        </p>
+
+        <p className="mt-4">
+            Years later, the site is still online. The bones—the structure, the flow, the accessibility—are mine.
+            And that matters, not because it looks impressive, but because it holds.
+            It holds people. It holds purpose. It holds history.
+        </p>
+
+        <p className="mt-4">
+            Since then, I’ve continued to build systems rooted in that same ethic: clarity, stability, and care under pressure.
+            This portfolio framework is part of that practice—growing more modular, more expressive, and more intentional with every case study I add.
+        </p>
+
+        <p className="mt-4">
+            The real work is rarely glamorous. It’s not always in the spotlight. But it’s there when it counts—quietly holding the line.
+        </p>
         </Section>
+
+
       </CaseStudyLayout>
     </motion.div>
   );
