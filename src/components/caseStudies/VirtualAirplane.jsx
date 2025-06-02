@@ -45,11 +45,19 @@ export default function VirtualAirplane() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -30 }}
-      transition={transition}
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+
     >
+        <button
+      onClick={() => navigate(-1)}
+      className="md:hidden text-[var(--color-accent)] underline mb-4"
+    >
+      ← Back to Projects
+    </button>
+
+
       <CaseStudyLayout>
         <motion.div layoutId={`card-${thisCase.slug}`}>
           <HeroSection

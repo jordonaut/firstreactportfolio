@@ -1,3 +1,4 @@
+// HeroSection.jsx
 import { motion } from 'framer-motion';
 import { TagList } from '../../components/TagList';
 
@@ -13,9 +14,9 @@ export const HeroSection = ({
   tags = [],
 }) => {
   return (
-    <section className="w-full py-24 px-0 sm:px-0 text-[var(--color-text)]">
-      <div className="max-w-screen-xl mx-auto space-y-8 px-4">
-        {/* Title & Subtitle */}
+    <section className="w-full py-24 px-0 text-[var(--color-text)] bg-[var(--color-bg)]">
+      <div className="max-w-screen-2xl mx-auto px-4 space-y-16">
+        {/* Title, Tags, Subtitle */}
         <div className="text-center space-y-8">
           {title && (
             <motion.h1
@@ -44,12 +45,12 @@ export const HeroSection = ({
 
         {/* Hero Image */}
         {image && (
-          <div className="w-full px-0">
+          <div className="w-full">
             <motion.img
               layoutId={`image-${slug}`}
               src={image}
               alt={alt}
-              className="w-full h-auto rounded-xl shadow-lg"
+              className="w-full h-auto rounded-2xl shadow-lg"
             />
             {caption && (
               <p className="text-sm mt-3 text-[var(--color-text-secondary)] text-center">
@@ -59,7 +60,7 @@ export const HeroSection = ({
           </div>
         )}
 
-        {/* Role and Tools */}
+        {/* Role & Tools */}
         {(role || tools) && (
           <div className="text-center space-y-2 max-w-xl mx-auto">
             {role && <p><strong>Role:</strong> {role}</p>}
