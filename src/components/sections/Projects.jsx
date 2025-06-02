@@ -1,3 +1,5 @@
+//projects.jsx
+
 import { RevealOnScroll } from "../RevealOnScroll";
 import { ProjectCard } from "../ui/ProjectCard";
 import {caseStudies} from "../../data/caseStudies.js"; 
