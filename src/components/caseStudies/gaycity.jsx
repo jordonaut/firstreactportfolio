@@ -38,8 +38,10 @@ const thisCase = {
   caption: 'Homepage of the redesigned Gay City site, coded and launched solo.',
   role: 'Communications Designer → Front-End Dev',
   tools: 'Sketch, WordPress, HTML, CSS',
-  tags: ['Web Design', 'WordPress', 'Nonprofit', 'LGBTQ+ Org', 'Accessibility'],
+  tags: ['Web Design', 'Non-Profit' ,'LGBTQ', 'Gay City', 'WordPress', 'User Research', 'Sketch'],  
 };
+
+{/* tags should go: type of design, type of industry, company/org name, tools used in order of importance */}
 
 export default function GayCity() {
   const navigate = useNavigate();
@@ -357,7 +359,7 @@ export const gayCityMeta = {
   caption: 'Homepage of the redesigned Gay City site, coded and launched solo.',
   role: 'Communications Designer → Front-End Dev',
   tools: 'Sketch, WordPress, HTML, CSS',
-  tags: ['Web Design', 'WordPress', 'Nonprofit', 'LGBTQ+ Org', 'Accessibility'],
+  tags: ['Web Design', 'Non-Profit' ,'LGBTQ', 'Gay City', 'WordPress', 'User Research', 'Sketch'],  
   component: GayCity,
   featured: true,
 };

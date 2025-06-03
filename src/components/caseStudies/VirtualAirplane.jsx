@@ -30,15 +30,16 @@ const transition = { duration: 0.6, ease: [0.4, 0, 0.2, 1] };
 const thisCase = {
   slug: 'virtual-airplane',
   title: 'Designing Virtual Airplane',
-  subtitle: 'Redesigning the Lesson Panel to Reflect How Pilots Actually Learn',
+  subtitle: 'Designing a Lesson Interface to bolster Pilot Safety',
   heroImage: vaHero,
   alt: 'Hero image for Virtual Airplane',
   caption: 'A screenshot from the training interface',
-  role: 'Lead UX Designer',
+  role: 'Product/UX Designer',
   tools: 'Figma, React, Framer Motion',
-  tags: ['UX Design', 'Figma', 'Aerospace', 'Boeing', 'User Research'],
+  tags: ['Product Design','Aerospace', 'Boeing', 'Figma', 'User Research'],
 };
 
+{/* tags should go: type of design, type of industry, company/org name, tools used in order of importance */}
 
 export default function VirtualAirplane() {
   const navigate = useNavigate();
@@ -247,7 +248,7 @@ export const virtualAirplaneMeta = {
   caption: 'A screenshot from the training interface',
   role: 'Lead UX Designer',
   tools: 'Figma, React, Framer Motion',
-  tags: ['UX Design', 'Figma', 'Aerospace', 'Boeing', 'User Research'],
+  tags: ['Product Design','Aerospace', 'Boeing', 'Figma', 'User Research'],
   component: VirtualAirplane,
   featured: true,
 };
