@@ -15,16 +15,17 @@ const palettes = [
 
 export function PaletteSwitcher() {
   const [currentIndex, setCurrentIndex] = useState(() => {
-    const stored = localStorage.getItem('palette');
-    return stored ? palettes.findIndex(p => p.id === stored) : 0;
-  });
+  const stored = sessionStorage.getItem('palette');
+  const initial = stored || 'green';
+  return palettes.findIndex(p => p.id === initial);
+});
 
   const [isPulsing, setIsPulsing] = useState(false);
   const current = palettes[currentIndex];
 
   useEffect(() => {
     document.documentElement.setAttribute('data-palette', current.id);
-    localStorage.setItem('palette', current.id);
+    sessionStorage.setItem('palette', current.id);
 
     // Trigger pulse animation
     setIsPulsing(true);
