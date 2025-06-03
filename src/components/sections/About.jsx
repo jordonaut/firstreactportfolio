@@ -42,31 +42,28 @@ export const About = () => {
     return "Hi, I'm Jordan—nice to meet you.";
   };
 
-
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center py-20">
+    <section id="about" className="min-h-screen flex items-center justify-center py-20 text-[var(--color-text)]">
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-green-500 to-teal-400 bg-clip-text text-transparent text-center">
+          <h2 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-[var(--color-accent)] text-center">
             About Me:
           </h2>
 
-          <div className="rounded-xl p-6 mb-6 border-white/10 border hover:-translate-y-1 transition-all">
+          <div className="rounded-xl p-6 mb-6 border border-[var(--color-ring-glow)] hover:-translate-y-1 transition-all">
             <div className="flex flex-col md:flex-row items-start gap-10 mb-6">
               <div className="flex flex-col items-center md:items-start w-full">
-                    <img 
-                    src={jordanprofessional}
-                    alt="Professional headshot of Jordan Green"
-                    className="w-64 h-64 object-cover object-top rounded-full border border-white/20 shadow-lg"
-                    />
-                    <p className="text-sm text-[var(--color-text-secondary)] mt-3 text-center w-64">
-                        {getCaption()}
-                    </p>
-                </div>
+                <img 
+                  src={jordanprofessional}
+                  alt="Professional headshot of Jordan Green"
+                  className="w-64 h-64 object-cover object-top rounded-full border border-[var(--color-ring-glow)] shadow-lg"
+                />
+                <p className="text-sm text-[var(--color-text-secondary)] mt-3 text-center w-64">
+                  {getCaption()}
+                </p>
+              </div>
 
-
-
-              <div className="space-y-4 text-gray-200 text-base leading-relaxed md:max-w-xl">
+              <div className="space-y-4 text-base leading-relaxed md:max-w-xl text-[var(--color-text)]">
                 <p><strong>I'm a designer who codes.</strong></p>
                 <p>The world has enough well-designed shopping carts—what we need are more tools that engender connection rather than frustration.</p>
                 <p>I believe technology should be a bridge—a way to connect people and amplify voices; a way to build a more joyful and just world.</p>
@@ -79,13 +76,13 @@ export const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-xl p-6 border border-white/10 hover:-translate-y-1 transition-all">
+            <div className="rounded-xl p-6 border border-[var(--color-ring-glow)] hover:-translate-y-1 transition-all">
               <h3 className="text-2xl font-bold mb-4">UX Design</h3>
               <div className="flex flex-wrap gap-2">
                 {uxSkills.map((tech, key) => (
                   <span
                     key={key}
-                    className="bg-green-700/10 text-teal-200 py-1 px-3 rounded-full text-sm hover:bg-green-300/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition"
+                    className="bg-[var(--color-accent)]/10 text-[var(--color-accent)] py-1 px-3 rounded-full text-sm hover:bg-[var(--color-accent)]/20 hover:shadow-[0_2px_8px_var(--color-ring-glow)] transition"
                   >
                     {tech}
                   </span>
@@ -93,13 +90,13 @@ export const About = () => {
               </div>
             </div>
 
-            <div className="rounded-xl p-6 border border-white/10 hover:-translate-y-1 transition-all">
+            <div className="rounded-xl p-6 border border-[var(--color-ring-glow)] hover:-translate-y-1 transition-all">
               <h3 className="text-2xl font-bold mb-4">Designing in Code</h3>
               <div className="flex flex-wrap gap-2">
                 {codeSkills.map((tech, key) => (
                   <span
                     key={key}
-                    className="bg-green-700/10 text-teal-200 py-1 px-3 rounded-full text-sm hover:bg-green-300/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition"
+                    className="bg-[var(--color-accent)]/10 text-[var(--color-accent)] py-1 px-3 rounded-full text-sm hover:bg-[var(--color-accent)]/20 hover:shadow-[0_2px_8px_var(--color-ring-glow)] transition"
                   >
                     {tech}
                   </span>

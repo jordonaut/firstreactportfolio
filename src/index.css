@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
+/* Base Theme (Green) */
 :root {
   --color-bg: #0C0F0D;
   --color-surface: #0F1613;
-  --color-accent: #21F3A4;  
+  --color-accent: #21F3A4;
   --color-primary: #A5F3CE;
   --color-primary-bright: #55FFC1;
   --color-mint-glow: #4BFFDC;
@@ -11,20 +12,133 @@
 
   --color-text: #E6FFF4;
   --color-text-secondary: #89CBB3;
-
-  --color-purple-deep: #2D1E33;
-  --color-purple-glow: #D2B4FF;
 }
 
-html, body{
+/* 🌸 hot-pink — Rose */
+[data-palette="hot-pink"] {
+  --color-bg: #1A0E15;
+  --color-surface: #2D0F1E;
+  --color-accent: #FF69B4;
+  --color-primary: #FFA6D1;
+  --color-primary-bright: #FFB7DC;
+  --color-mint-glow: #FFC0CB; /* rose blush */
+  --color-ring-glow: rgba(255, 150, 200, 0.3);
+
+  --color-text: #FFE6F1;
+  --color-text-secondary: #FFB8D9;
+}
+
+/* ❤️ red — Cedar */
+[data-palette="red"] {
+  --color-bg: #1B0D0A;
+  --color-surface: #2D1411;
+  --color-accent: #B33F3F;
+  --color-primary: #E68080;
+  --color-primary-bright: #FF9999;
+  --color-mint-glow: #D29A84; /* cedarwood heart */
+  --color-ring-glow: rgba(178, 90, 90, 0.3);
+
+  --color-text: #FFEDEA;
+  --color-text-secondary: #FFB3A3;
+}
+
+/* 🧡 orange — Orange */
+[data-palette="orange"] {
+  --color-bg: #1E1000;
+  --color-surface: #2A1500;
+  --color-accent: #FF7133;
+  --color-primary: #FFC899;
+  --color-primary-bright: #FFAA66;
+  --color-mint-glow: #FFD8B0; /* orange rind glow */
+  --color-ring-glow: rgba(255, 184, 111, 0.3);
+
+  --color-text: #FFF4E6;
+  --color-text-secondary: #FFD1A3;
+}
+
+/* 💛 yellow — Ginger */
+[data-palette="yellow"] {
+  --color-bg: #1A1905;
+  --color-surface: #292800;
+  --color-accent: #FBEA67;
+  --color-primary: #FFFACD;
+  --color-primary-bright: #FFFF99;
+  --color-mint-glow: #FCE5A0; /* golden ginger spice */
+  --color-ring-glow: rgba(255, 249, 140, 0.3);
+
+  --color-text: #FFFCE1;
+  --color-text-secondary: #F9F1B0;
+}
+
+/* 💚 green — Mint */
+[data-palette="green"] {
+  --color-bg: #0C0F0D;
+  --color-surface: #18211E;
+  --color-accent: #21F3A4;
+  --color-primary: #A5F3CE;
+  --color-primary-bright: #55FFC1;
+  --color-mint-glow: #4BFFDC; /* cool mint clarity */
+  --color-ring-glow: rgba(165, 243, 206, 0.3);
+
+  --color-text: #F0FDF4;
+  --color-text-secondary: #89CBB3;
+}
+
+/* 🩵 turquoise — Rain */
+[data-palette="turquoise"] {
+  --color-bg: #081818;
+  --color-surface: #102020;
+  --color-accent: #40E0D0;
+  --color-primary: #99F6E4;
+  --color-primary-bright: #66F6E2;
+  --color-mint-glow: #B3FAF1; /* pale rain shimmer */
+  --color-ring-glow: rgba(102, 246, 226, 0.3);
+
+  --color-text: #E0FFFA;
+  --color-text-secondary: #B0E7DC;
+}
+
+/* 💙 indigo — Lotus */
+[data-palette="indigo"] {
+  --color-bg: #0E0E1B;
+  --color-surface: #151526;
+  --color-accent: #6B6BFF;
+  --color-primary: #A0A0FF;
+  --color-primary-bright: #8585FF;
+  --color-mint-glow: #B8C4FF; /* dream lotus glow */
+  --color-ring-glow: rgba(107, 107, 255, 0.3);
+
+  --color-text: #E6E6FF;
+  --color-text-secondary: #B8B8F0;
+}
+
+/* 💜 violet — Lilac */
+[data-palette="violet"] {
+  --color-bg: #1B1026;
+  --color-surface: #2C1A3C;
+  --color-accent: #B388FF;
+  --color-primary: #D2B4FF;
+  --color-primary-bright: #C5A3FF;
+  --color-mint-glow: #E4CFFF; /* lilac haze */
+  --color-ring-glow: rgba(179, 136, 255, 0.3);
+
+  --color-text: #F5EDFF;
+  --color-text-secondary: #D8C8F0;
+}
+
+
+/* Base styles */
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: "KitSans", sans-serif;
-  background: #0B1A16;
-  color: #E6FFF4;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
-@layer utilities{
+/* Tailwind + custom animations */
+@layer utilities {
   @keyframes loading {
     0% {
       transform: translateX(-100%);
@@ -37,16 +151,35 @@ html, body{
   .animate-loading-bar {
     animation: loading 0.8s ease infinite;
   }
-
 }
 
+/* Reveal utility for fade/slide in */
 .reveal {
-  opacity: 0; 
-  transform: translateY(20px); 
+  opacity: 0;
+  transform: translateY(20px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.pulse {
+  animation: pulse-heart 0.3s ease-in-out;
+}
+
+@keyframes pulse-heart {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
