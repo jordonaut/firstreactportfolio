@@ -21,6 +21,8 @@ import lessonPanelDocumentation from '../../assets/images/caseStudies/virtualAir
 import lightsOn from '../../assets/images/caseStudies/virtualAirplane/lights-on.png';
 import lightsOff from '../../assets/images/caseStudies/virtualAirplane/lights-off.png';
 import activePause from '../../assets/images/caseStudies/virtualAirplane/active-pause.png';
+import gracefulError from '../../assets/images/caseStudies/virtualAirplane/graceful-error-messages.png';
+import lessonPanelSizing from '../../assets/images/caseStudies/virtualAirplane/lesson-panel-sizing.png';
 
 
 // Data
@@ -89,7 +91,6 @@ export default function VirtualAirplane() {
               </p>
             </div>
             <div className="md:w-1/3 w-full mt-8 md:mt-0 flex justify-center">
-              
               <CaseStudyImage
                 images={[
                   { src: chairFlyingExample, alt: "Pilot using a cockpit poster during chair flying", caption: "Pilots often trained by pointing at printed cockpit posters to simulate task flow—known in aviation as 'chair flying." }
@@ -117,17 +118,20 @@ export default function VirtualAirplane() {
             </div>
           </div>
         </Section>
+
         <FeatureQuote subline="We were making a tool to help them build muscle memory and procedural fluency before ever stepping into the simulator.">
-        Virtual Airplane was more than a simulator, it was how pilots bridged theory and cockpit reality.
+          Virtual Airplane was more than a simulator, it was how pilots bridged theory and cockpit reality.
         </FeatureQuote>
+
         <Section id="designing-the-lesson-panel" data-label="Designing the Lesson Panel">
           <h2 className="text-2xl font-semibold">Designing the Lesson Overlay</h2>
 
           <CaseStudyImage
-            src={interfaceDesignOne}
-            alt="Initial interface design of the Lesson Overlay"
-            caption="An early mockup of the redesigned Lesson Panel interface layered over the 3D Virtual Airplane simulation."
-            className="my-6"
+            images={[{
+              src: interfaceDesignOne,
+              alt: "Initial interface design of the Lesson Overlay",
+              caption: "An early mockup of the redesigned Lesson Panel interface layered over the 3D Virtual Airplane simulation."
+            }]}
           />
 
           <p className="mt-6">
@@ -136,8 +140,7 @@ export default function VirtualAirplane() {
           </p>
 
           <p className="mt-4">
-            Because the platform was designed to run on iPads—standard equipment in Boeing cockpits—the entire experience was
-            <strong> streamed remotely using a custom web-based rendering stack</strong>. This allowed Virtual Airplane to deliver cockpit simulation and training content without requiring expensive local hardware or thick-client installations.
+            Because the platform was designed to run on iPads—standard equipment in Boeing cockpits—the entire experience was <strong>streamed remotely using a custom web-based rendering stack</strong>. This allowed Virtual Airplane to deliver cockpit simulation and training content without requiring expensive local hardware or thick-client installations.
           </p>
 
           <p className="mt-4">
@@ -145,16 +148,49 @@ export default function VirtualAirplane() {
             Any friction in this interface risked disrupting the mental flow of the lesson. We designed it to feel quiet, stable, and precise—so that pilots could focus on their training, not on the tool delivering it.
           </p>
 
+          <p className="mt-4">
+            Early UET sessions revealed critical usability friction. Some pilots mistook the Verify arrow for a progression button, bypassing verification entirely. Others overlooked supplemental attachments in the Lesson Panel. We redesigned affordances, added clear attachment indicators, and iterated on the verify interaction—reducing mis-clicks and improving completion fidelity in subsequent test cycles.
+          </p>
+
           <CaseStudyImage
-            src={inferfaceDesignTwo}
-            alt="Second Iteration design of the Lesson Overlay"
-            caption="Iterating on the Lesson Panel Design. This version was released with version 2.0 of the Virtual Airplane Experience."
-            className="my-6"
+            images={[{
+              src: inferfaceDesignTwo,
+              alt: "Second Iteration design of the Lesson Overlay", 
+              caption: "Iterating on the Lesson Panel Design. This version was released with version 2.0 of the Virtual Airplane Experience."
+            }]}
           />
 
           <p className="mt-4">
             Because this was a <strong>streaming experience</strong>, we needed a way for users to toggle out of full immersion.
             I added a theater mode button next to the close icon—offering flexibility to instructors without compromising flow.
+          </p>
+        </Section>
+
+        <Section id="product-decisions" data-label="Product Decisions">
+          <h2 className="text-2xl font-semibold">Product Decisions</h2>
+
+          <p>
+            The Lesson Panel wasn’t designed in isolation—it sat at the intersection of learning outcomes, instructor needs, and platform constraints.
+          </p>
+
+          <p className="mt-4">
+            Feature prioritization balanced realism, instructional value, and technical feasibility:
+          </p>
+
+          <ul className="list-disc ml-6 mt-4 space-y-2">
+            <li>
+              We prioritized <strong>Active Pause</strong> and <strong>Focus Button</strong> early on, as they directly addressed instructional needs surfaced in UET sessions.
+            </li>
+            <li>
+              <strong>All Lights On</strong> shipped after strong SME feedback on cockpit legibility.
+            </li>
+            <li>
+              Features with lower instructional impact—such as advanced skinning or dynamic theming—were intentionally deferred to focus on core procedural flow.
+            </li>
+          </ul>
+
+          <p className="mt-4">
+            Each decision reflected ongoing collaboration between product, engineering, and test insights—ensuring that what shipped directly improved pilot learning outcomes.
           </p>
         </Section>
 
@@ -176,21 +212,45 @@ export default function VirtualAirplane() {
              <CaseStudyImage
                 images={[
                   { src: lightsOff, alt: "Lights off in the cockpit simulator", caption: "The simulator was difficult to read in low light. I proposed a feature to simulate cockpit floodlights, which instantly improved legibility." },
-                  { src: lightsOn, alt: "Lights on in the cockpit simulator", caption: "The simulator was difficult to read in low light. I proposed a feature to simulate cockpit floodlights, which instantly improved legibility."}
+                  { src: lightsOn, alt: "Lights on in the cockpit simulator", caption: "All Lights On feature dramatically improved cockpit legibility for training sessions."}
                 ]}
               />
             <Feature title="All Lights On">
               SMEs and customers said they couldn’t read the simulator. I proposed a feature to simulate cockpit floodlights. It required dev tradeoffs due to streaming constraints, but it was a small fix with big impact—instantly improving legibility.
             </Feature>
-            <Feature title="Focus Button">
-              Users often got lost in the simulation’s 3D space. I introduced a refocus button to reorient them back to the original view.
-            </Feature>
+             <CaseStudyImage
+            images={[{
+              src: activePause,
+              alt: "Active Pause feature in the Virtual Airplane interface", 
+              caption: "The Active Pause feature allowed instructors to pause the simulation without freezing all features, enabling continued exploration and interaction."
+            }]}
+          />
             <Feature title="Active Pause">
               Instructors needed a way to pause the sim without freezing every feature. I designed an Active Pause system that paused progression but still allowed exploration.
             </Feature>
+
+             <CaseStudyImage
+            images={[{
+              src: lessonPanelSizing,
+              alt: "Lesson Panel Sizing in the Virtual Airplane interface", 
+              caption: "Lesson Panel Sizing was standardized to ensure visual consistency across training teams and devices."
+            }]}
+          />
             <Feature title="Lesson Panel Sizing">
               I standardized sizing to reduce friction and ensure visual consistency across training teams and devices.
             </Feature>
+
+            <CaseStudyImage
+              images={[{
+                src: gracefulError,
+                alt: "Graceful Error Handling in the Virtual Airplane interface",
+                caption: "Graceful Error Handling provided clear feedback when the training flow was disrupted, ensuring users remained oriented."
+              }]}
+            />
+
+            <Feature title="Graceful Error Handling">
+              I designed the Lesson Panel to handle errors gracefully, providing clear feedback when the training flow was disrupted. This included fallback states and informative messages that kept users oriented.
+              </Feature>
           </div>
         </Section>
 
